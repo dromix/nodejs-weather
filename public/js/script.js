@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
         msg1.textContent = 'Loading...';
         msg2.textContent = '';
         if (address.value) {
-            fetch(`http://localhost:3000/weather?address=${address.value}`)
+            fetch(`/weather?address=${address.value}`)
                 .then(res => res.json().then(data => {
                     if (data.error) {
                         msg1.textContent = data.error;
@@ -21,9 +21,3 @@ window.addEventListener('DOMContentLoaded', () => {
         } 
     });    
 });
-
-function removeInfo() {
-    try {
-        document.querySelector('.info-block').remove();
-    } catch (e){}
-}
